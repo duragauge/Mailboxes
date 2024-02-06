@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mailbox Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="instructions">
+	<p>You have a Valentine from a secret admirer!  It is in one of the 15 mailboxes below.  You are only allowed to look in one box each day.  Every night a puckish mailroom clerk will randomly move your letter one space (left or right) to an adjacent box.  If you do not find it in the month of February it will be permanently destroyed.</p>
+	
+	<p>Fortunately, it is leap year so you get one extra day!  Come up with a strategy that is guaranteed to find your letter in the alotted 29 days and explain why it will work.</p>
+
+	<p>Email your response to <a href="mailto:chris.nord@chemeketa.edu">chris.nord@chemeketa.edu</a>.  The winning response will provide the clearest explanation and will be posted on leap-year day!</p>
+</div>
+    <div id="game-controls">
+        <button onclick="startGame()">Reset Game</button>
+        <span id="guesses-left">Guesses Left: 29</span> <!-- Initial counter value -->
+    </div>
+    <div id="game-container">
+        <!-- Dynamically generate boxes using JavaScript -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

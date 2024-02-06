@@ -1,0 +1,46 @@
+body{
+	color: #00303F;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	letter-spacing: 0.025em;
+	line-height: 1.65;
+	margin:2em;
+    position: relative;
+	background: pink;
+}
+
+#instructions{
+	max-width: 860px;
+}
+
+#game-container {
+	font-size: 10pt;
+	text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+	max-width: 860px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border: 1px solid black;
+	display: flex;
+    text-align: center;
+	cursor: pointer;
+    line-height: 50px;
+}
+
+#game-controls {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 20px;
+}
+
+#guesses-left {
+    margin-left: 10px;
+}
