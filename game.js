@@ -41,12 +41,18 @@ function makeGuess(index) {
         guessesLeft--;
         updateGuessesLeftDisplay();
       
+
+        // Delay before resetting the text and moving the star
+        setTimeout(() => {
+            guessedBox.textContent = index + 1; // Reset to show its original number
+
         if (guessesLeft <= 0) {
             showModal('Unfortunately, you have run out of days. The secret Valentine message, sadly, has been destroyed.','Destroyed_Valentine.png');
             isGameOver = true;
             disableBoxes();
             document.querySelectorAll('.box')[starPosition].style.backgroundColor = 'yellow'; // Reveal the correct box
         }
+    }, 700); // Delay in milliseconds
     }
 }
 
