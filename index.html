@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Thanks to OpenAI's ChatGPT for assistance with JavaScript and CSS code snippets and troubleshooting advice, and to PlaygroundAI for images.-->
     <title>Mailbox Game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="instructions">
-	<p>You have a Valentine from a secret admirer!  It is in one of the 15 mailboxes below.  You are only allowed to look in one box each day.  Every night a puckish mailroom clerk will randomly move your letter one space (left or right) to an adjacent box.  If you do not find it in the month of February it will be permanently destroyed.</p>
+    <h2>Find the Valentine</h2>
+	<p>You have a Valentine from a secret admirer!  It is in one of the 15 mailboxes below.  You are only allowed to look in one box each day.  Every night a puckish mail room clerk will randomly move your letter one space (left or right) to an adjacent box.  If you do not find it in the month of February, then it will be permanently destroyed.</p>
 	
-	<p>Fortunately, it is leap year so you get one extra day!  Come up with a strategy that is guaranteed to find your letter in the alotted 29 days and explain why it will work.</p>
+	<p>Fortunately, it's leap year so you get one extra day!  Come up with a strategy that is <u>guaranteed</u> to find your letter in the allotted 29 days and <b>explain</b> why it will work.</p>
 
 	<p>Email your response to <a href="mailto:chris.nord@chemeketa.edu">chris.nord@chemeketa.edu</a>.  The winning response will provide the clearest explanation and will be posted on leap-year day!</p>
+
+    <p>See <a href="test.html">this page</a> if you would like to visualize how the clerk moves the letter each night.</p>
 </div>
-    <div id="game-controls">
-        <button onclick="startGame()">Reset Game</button>
-        <span id="guesses-left">Guesses Left: 29</span> <!-- Initial counter value -->
-    </div>
     <div id="game-container">
         <!-- Dynamically generate boxes using JavaScript -->
     </div>
-    <script src="script.js"></script>
+    <div id="game-controls">
+        <button onclick="startGame()">Reset</button>
+        <span id="guesses-left">Days Left: 29</span> <!-- Initial counter value -->
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <p id="modal-text">This is your alert text</p>
+            <!-- Image placeholder -->
+            <img id="modal-image" src="" alt="Modal Image" style="max-width:100%; height:auto;">
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
 </body>
 </html>

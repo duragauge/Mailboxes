@@ -1,46 +1,112 @@
 body{
-	color: #00303F;
+	color: black;
 	font-family: 'Open Sans', Helvetica, sans-serif;
-	font-size: 14pt;
+	font-size: 13pt;
 	font-weight: 400;
-	letter-spacing: 0.025em;
 	line-height: 1.65;
 	margin:2em;
     position: relative;
-	background: pink;
+    background-image: url("background1.png");
+    max-width: 860px;
 }
 
 #instructions{
-	max-width: 860px;
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.4); /* white w/ opacity */
+    box-shadow: 5px 0px 50px 15px rgba(255, 255, 255, 0.4); 
 }
 
 #game-container {
-	font-size: 10pt;
-	text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-	max-width: 860px;
 }
 
 .box {
-    width: 50px;
-    height: 50px;
-    margin: 2px;
-    border: 1px solid black;
-	display: flex;
+    width: 45px;
+    height: 45px;
+    margin: 1px;
+    border: 2px solid grey;
+    border-radius: 10px;
     text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
 	cursor: pointer;
-    line-height: 50px;
+    line-height: 45px;
+    color: red;
 }
+
+.box:hover {
+    background-color: #e9d4d4; /* Set your desired hover color here */
+  }
+
+.box.disabled {
+    pointer-events: none; /* Prevents further clicks */
+    opacity: 0.5; /* Visual cue for disabled state */
+    background-color: #f0f0f0; /* Optional: change background color to indicate disabled state */
+}
+
 
 #game-controls {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     margin: 20px;
+    font-size:1.5em;
 }
+
+#game-controls button {
+    font-size: 20px; /* Larger font size */
+    padding: 10px 20px; /* Add more padding */
+    background-color: #f04f54; /* Example background color, choose what fits your design */
+    color: white; /* Text color */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Optional: rounds the corners of the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+#game-controls button:hover {
+    background-color: #c13e44; /* Darker shade on hover, adjust as needed */
+}
+
 
 #guesses-left {
     margin-left: 10px;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: pink;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

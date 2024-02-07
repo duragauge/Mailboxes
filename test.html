@@ -1,0 +1,41 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Thanks to OpenAI's ChatGPT for assistance with JavaScript and CSS code snippets and troubleshooting advice, and to PlaygroundAI for images.-->
+    <title>Mailbox Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="instructions">
+    <h2>BTS</h2>
+	<p>With this behind-the-scenes view you can see how the puckish mail room clerk moves the Valentine letter each night.  The box containing the secret letter is highlighted in <span style="font-weight:600;padding: 5px;border: 2px solid grey;border-radius: 10px;background-color: yellow;color:red;">YELLOW</span>.</p>
+    
+    <p>The letter starts in a random box.  Every time you chose a box another day will pass and the letter will be moved randomly left or right to an adjacent box.</p>
+    
+    <p>Use this to help formulate your process for finding the letter.  Once you think you have a good process, return to the <a href="index.html">main page</a> and test it a few times.  You'll want to be certain that your process will <b>always</b> work in 29 or fewer days.</p>
+</div>
+
+
+<div id="game-container">
+    <!-- Dynamically generate boxes using JavaScript -->
+</div>
+<div id="game-controls">
+    <button onclick="startGame()">Reset</button>
+    <span id="guesses-left">Days Left: 29</span> <!-- Initial counter value -->
+</div>
+   
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <p id="modal-text">This is your alert text</p>
+        <!-- Image placeholder -->
+        <img id="modal-image" src="" alt="Modal Image" style="max-width:100%; height:auto;">
+    </div>
+</div>
+
+    <script src="demo.js"></script>
+</body>
+</html>
