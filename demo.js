@@ -24,28 +24,39 @@ function startGame() {
 }
 
 function makeGuess(index) {
-    clearGuessIndications();
     if (isGameOver) {
         return; // Prevent guesses after the game has ended
     }
     const guessedBox = document.querySelector(`.box[data-index="${index}"]`);
     if (index === starPosition) {
         guessedBox.innerText = 'YES';
+        guessedBox.style.backgroundColor = 'yellow'; // Highlight the correct box immediately upon finding
         isGameOver = true;
         disableBoxes();
         showModal('Congratulations! You found the Valentine!', 'Valentine.png');
     } else {
         guessedBox.innerText = 'NO';
-        moveStar();
         guessesLeft--;
         updateGuessesLeftDisplay();
-        if (guessesLeft <= 0) {
-            showModal('Unfortunately, you have run out of days. <br>The secret Valentine message, sadly, has been destroyed.','Destroyed_Valentine.png');
-            isGameOver = true;
-            disableBoxes();
-        }
+
+        // Delay before resetting the text and moving the star
+        setTimeout(() => {
+            guessedBox.textContent = index + 1; // Reset to show its original number
+            
+            if (guessesLeft <= 0) {
+                showModal('Unfortunately, you have run out of days. <br>The secret Valentine message, sadly, has been destroyed.','Destroyed_Valentine.png');
+                isGameOver = true;
+                disableBoxes();
+                // Reveal the star location after game over
+                document.querySelectorAll('.box')[starPosition].style.backgroundColor = 'yellow';
+            } else {
+                moveStar(); // Move the star after showing 'NO' briefly and updating the box
+                updateStarVisual(); // Update the visual to show the star's new location
+            }
+        }, 700); // Delay in milliseconds
     }
 }
+
 
 
 function moveStar() {
